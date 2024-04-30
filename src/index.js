@@ -15,7 +15,7 @@ import BookPage from "./routes/BookPage";
 
 const routes = createBrowserRouter([
   {
-    path: "/",
+    path: "thamarat-frontend",
     element: <Root />,
     children: [
       {
@@ -23,11 +23,11 @@ const routes = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/ForgotPassword",
+        path: "thamarat-frontend/ForgotPassword",
         element: <ForgotPassword />,
       },
       {
-        path: "/SignUp1",
+        path: "thamarat-frontend/SignUp1",
         element: <SignUp1 />,
       },
     ],
