@@ -1,7 +1,7 @@
 {
   "name": "thamarat-forntend",
   "version": "0.1.0",
-  "homepage": "https://AymanEhab202.github.com/thamarat-frontend",
+  "homepage": "https://a-social-media-platform-for-readers.github.io/thamarat-frontend/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
