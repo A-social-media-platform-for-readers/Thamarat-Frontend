@@ -1,0 +1,84 @@
+.bookCard {
+  background-color: #befacf66;
+  max-height: 200px;
+}
+.bookCard > a {
+  height: 200px;
+  border-radius: 16px;
+}
+.bookCard > a img {
+  height: 100%;
+}
+@media (min-width: 992px) {
+  .bookCard > a {
+    box-shadow: 0px 5px 20px 0px #00000040;
+  }
+}
+.bookDesc {
+  font-size: 14px;
+  text-overflow: ellipsis;
+}
+.views {
+  top: 10px;
+  left: 5%;
+}
+.likes {
+  top: 10px;
+  left: 20%;
+}
+.price {
+  bottom: 15px;
+  left: 5%;
+}
+.catigory {
+  background-color: #b8fdcc;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+}
+.features {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+@media (max-width: 1200px) {
+  .features {
+    margin-right: 15px;
+  }
+  .features img {
+    width: 20px;
+  }
+  .catigory {
+    width: 80px;
+    font-size: 12px;
+  }
+  .price {
+    bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 991px) {
+  .bookDetails {
+    position: absolute;
+    background-color: rgb(229 253 236 / 80%);
+    width: 80%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 20px;
+  }
+  .views {
+    z-index: 100;
+  }
+  .likes {
+    z-index: 100;
+    left: 25%;
+  }
+  .price {
+    bottom: 18px;
+  }
+}

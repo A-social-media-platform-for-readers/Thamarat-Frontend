@@ -1,0 +1,35 @@
+.navContainer {
+  background-color: rgb(255 255 255 / 94%);
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+.searchBar {
+  position: relative;
+  width: 500px;
+}
+@media (max-width: 991px) {
+  .searchBar {
+    width: 320px;
+  }
+  .navbarPostion {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 14px;
+  }
+}
+.searchBar button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 5px;
+  top: calc(50% - 15px);
+  background-color: #92e3a9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+.navbarPostion a {
+  line-height: 2.7;
+}

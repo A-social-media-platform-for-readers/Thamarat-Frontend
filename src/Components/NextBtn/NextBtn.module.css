@@ -1,0 +1,15 @@
+.nextBtn {
+  background-color: #92e3a9;
+  border-color: #92e3a9;
+  width: 120px;
+}
+
+.nextBtn:hover {
+  background-color: #92e3a9;
+  border-color: #92e3a9;
+  box-shadow: 0px 0px 5px 5px #e7e7e7;
+}
+.nextBtn:active {
+  background-color: #92e3a9 !important;
+  border-color: #92e3a9 !important;
+}

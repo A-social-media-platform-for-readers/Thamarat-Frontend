@@ -1,0 +1,113 @@
+.newUser {
+  font-size: 13px;
+}
+.newUser a {
+  color: #92e3a9;
+}
+.form input {
+  border: 1px solid #92e3a9;
+}
+.form input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(146, 227, 169, 0.6);
+}
+.register {
+  color: #92e3a9;
+  border: 1px solid #92e3a9;
+  font-size: 13px;
+  background-color: white;
+}
+.register:hover {
+  background-color: #92e3a9;
+  color: white;
+}
+.forgotRem {
+  font-size: 12px;
+}
+.forgotPass a {
+  color: #92e3a9;
+}
+.forgotRem img {
+  cursor: pointer;
+}
+.forgotRem img[active="false"] {
+  opacity: 0.6;
+}
+.forgotRem img[active="false"]:hover {
+  opacity: 1;
+}
+.forgotRem img[active="true"] {
+  opacity: 1;
+}
+.forgotRem p {
+  color: #1877f2;
+}
+.registerWith div {
+  padding: 10px 15px;
+  border: 1px solid #eaeaea;
+  cursor: pointer;
+}
+.registerWith div:hover {
+  background-color: #eaeaea;
+}
+.registerWith > p {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+.registerWith > p::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100px;
+  background-image: linear-gradient(to right, white, black);
+  top: 50%;
+  left: 50px;
+}
+.registerWith > p::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100px;
+  background-image: linear-gradient(to left, white, black);
+  top: 50%;
+  right: 50px;
+}
+@media (min-width: 768px) and (max-width: 840px) {
+  .registerWith > p::before {
+    left: 15px;
+  }
+  .registerWith > p::after {
+    right: 15px;
+  }
+}
+@media (min-width: 841px) and (max-width: 991px) {
+  .registerWith > p::before {
+    left: 20px;
+  }
+  .registerWith > p::after {
+    right: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .registerWith > p::before {
+    left: 7px;
+  }
+  .registerWith > p::after {
+    right: 7px;
+  }
+}
+@media (max-width: 400px) {
+  .registerWith > p::before {
+    width: 100%;
+    left: 0;
+    top: -4px;
+    background-image: linear-gradient(to left, white, gray, white);
+  }
+  .registerWith > p::after {
+    width: 100%;
+    left: 0;
+    top: 30px;
+    background-image: linear-gradient(to left, white, gray, white);
+  }
+}

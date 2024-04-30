@@ -1,0 +1,144 @@
+.bookPageContainer {
+  max-width: calc(100% - 200px);
+  margin-right: auto;
+}
+@media (max-width: 991px) {
+  .bookPageContainer {
+    max-width: calc(100% - 40px);
+  }
+}
+.bookImgContainer {
+  background-color: #f4f4ff;
+  border-radius: 5px;
+  border: 1px solid #0909371a;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.bookImgContainer img {
+  width: 100%;
+}
+.features {
+  display: flex;
+  width: 100px;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (min-width: 1400px) {
+  .bookImgContainer {
+    padding: 60px;
+  }
+  .features {
+    top: 20px;
+  }
+}
+.bookDesc {
+  font-size: 14px;
+}
+.bookTitle::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 70%;
+  background-color: #d9d9d9;
+  bottom: -20px;
+}
+.bookDetails {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.bookDetails .views {
+  top: 10px;
+  left: 5%;
+}
+.likes {
+  top: 10px;
+  left: 20%;
+}
+.views {
+  top: 10px;
+  left: 5%;
+}
+@media (max-width: 1200px) {
+  .bookDesc {
+    max-height: 90px;
+    overflow: auto;
+  }
+  .bookImgContainer {
+    padding: 30px;
+  }
+  .likes {
+    left: 25%;
+  }
+  .features {
+    width: 70px;
+  }
+  .features img {
+    width: 20px !important;
+  }
+}
+.catigory {
+  background-color: #b8fdcc;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.bookDesc::-webkit-scrollbar {
+  display: block;
+  height: 8px;
+  width: 8px;
+}
+.bookDesc::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+.bookDesc::-webkit-scrollbar-thumb {
+  background: #92e3a9;
+  border-radius: 10px;
+}
+strong {
+  display: block;
+}
+.purchaseBox {
+  background-color: #f4f4ff;
+  border-radius: 5px;
+  border: 1px solid #0909371a;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: 14px;
+}
+.price {
+  display: flex;
+  padding: 0;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.price span {
+  font-size: 25px;
+}
+.purchaseFeatues {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.purchaseFeatues p {
+  margin: 0;
+}

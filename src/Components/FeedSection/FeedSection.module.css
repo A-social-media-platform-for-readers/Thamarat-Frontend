@@ -1,0 +1,11 @@
+.feedSection {
+    width: 50%;
+    position: relative;
+    top: 70px;
+    margin: 0;
+}
+@media (min-width: 992px) {
+    .feedSection {
+        margin-right: 150px;
+    }
+}

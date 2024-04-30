@@ -1,0 +1,12 @@
+.achievmentsSec {
+  width: 260px;
+  position: relative;
+  left: -20px;
+  top: 70px;
+}
+@media (max-width: 991px) {
+  .achievmentsSec {
+    width: 220px;
+    left: -10px;
+  }
+}

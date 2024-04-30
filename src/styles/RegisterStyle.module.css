@@ -1,0 +1,35 @@
+.formContainer {
+  width: 440px;
+  height: 590px;
+  overflow-y: scroll;
+}
+.formTitle {
+  position: relative;
+}
+.formTitle::before {
+  content: "";
+  position: absolute;
+  background-color: #92e3a9;
+  height: 3px;
+  border-radius: 3px;
+  width: 70%;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.registerContainer {
+  background-color: #92e3a9;
+  height: calc(100vh - 30px);
+  border-radius: 10px;
+  margin: 15px 15px;
+  width: calc(100% - 30px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  .registerContainer {
+    justify-content: flex-start;
+  }
+}

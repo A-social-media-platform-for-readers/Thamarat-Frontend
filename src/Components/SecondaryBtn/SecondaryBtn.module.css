@@ -1,0 +1,13 @@
+.secondaryBtn {
+  background-color: #f4f4ff;
+  color: #92e3a9;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: auto;
+  border: 1px solid #92e3a9;
+  cursor: pointer;
+}

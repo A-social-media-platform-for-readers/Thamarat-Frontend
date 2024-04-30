@@ -1,0 +1,10 @@
+.attributeBox {
+  background-color: #92e3a97a;
+  padding: 0 15px;
+  border-radius: 5px;
+  font-size: 12px;
+  display: inline-block;
+  margin-left: 10px;
+  width: 55px;
+  height: 24px;
+}

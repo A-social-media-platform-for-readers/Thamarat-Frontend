@@ -1,0 +1,30 @@
+.achievement {
+  background-color: #f6e7ae66;
+  height: 55px;
+}
+.details {
+  font-size: 14px;
+}
+.achievementProgress {
+  background-color: #dddddd;
+  position: relative;
+  border-radius: 10px;
+  width: 85%;
+  height: 5px;
+}
+.achievementProgress div {
+  content: "";
+  position: absolute;
+  background-color: #2c9585;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 10px;
+}
+.achievementProgress::after {
+  content: attr(percentage);
+  position: absolute;
+  left: -25px;
+  bottom: -6px;
+  font-size: 12px;
+}

@@ -1,0 +1,34 @@
+ul li {
+  padding: 10px 0;
+}
+.sidebar {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100% - 50px);
+  white-space: nowrap;
+  background-color: rgb(255 255 255 / 94%);
+  padding-top: 59px;
+  z-index: 1000;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .sidebar {
+    width: 40px;
+    right: 0;
+    padding-right: 10px;
+  }
+  .sidebar:hover {
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+  .sectionTitle {
+    opacity: 0;
+  }
+  .sidebar:hover .sectionTitle {
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+}
