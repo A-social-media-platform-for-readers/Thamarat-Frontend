@@ -23,11 +23,11 @@ const routes = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "thamarat-frontend/ForgotPassword",
+        path: "/thamarat-frontend/ForgotPassword",
         element: <ForgotPassword />,
       },
       {
-        path: "thamarat-frontend/SignUp1",
+        path: "/thamarat-frontend/SignUp1",
         element: <SignUp1 />,
       },
     ],
