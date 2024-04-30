@@ -60,7 +60,7 @@ const Login = () => {
       const content = await response.json();
       console.log(content);
       localStorage.setItem("token", content.jwt);
-      navigate("Home");
+      navigate("/Home");
     } else {
       alert("Enter data correctly");
     }
