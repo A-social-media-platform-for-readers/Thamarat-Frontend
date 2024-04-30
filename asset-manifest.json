@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/thamarat-frontend/static/css/main.fcb4cfa6.css",
-    "main.js": "/thamarat-frontend/static/js/main.da932dff.js",
+    "main.js": "/thamarat-frontend/static/js/main.3f6abce4.js",
     "static/js/453.651d0201.chunk.js": "/thamarat-frontend/static/js/453.651d0201.chunk.js",
     "static/media/profileImg.jpg": "/thamarat-frontend/static/media/profileImg.749667cc5449de2b9786.jpg",
     "static/media/ReadingIll.png": "/thamarat-frontend/static/media/ReadingIll.0e5c1a07d52ddf52d81d.png",
@@ -10,11 +10,11 @@
     "static/media/signupImg.png": "/thamarat-frontend/static/media/signupImg.aef92cf3c985e3ff55e0.png",
     "index.html": "/thamarat-frontend/index.html",
     "main.fcb4cfa6.css.map": "/thamarat-frontend/static/css/main.fcb4cfa6.css.map",
-    "main.da932dff.js.map": "/thamarat-frontend/static/js/main.da932dff.js.map",
+    "main.3f6abce4.js.map": "/thamarat-frontend/static/js/main.3f6abce4.js.map",
     "453.651d0201.chunk.js.map": "/thamarat-frontend/static/js/453.651d0201.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fcb4cfa6.css",
-    "static/js/main.da932dff.js"
+    "static/js/main.3f6abce4.js"
   ]
 }
