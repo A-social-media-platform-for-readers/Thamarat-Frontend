@@ -1,7 +1,12 @@
 import AttributeBox from "../Components/AttributeBox/AttributeBox";
+import BookCommentInput from "../Components/BookCommentInput/BookCommentInput";
+import BookDetails from "../Components/BookDetails/BookDetails";
+import BookLinks from "../Components/BookLinks/BookLinks";
 import BookSection from "../Components/BookSection/BookSection";
 import PrimaryBtn from "../Components/PrimaryBtn/PrimaryBtn";
 import SecondaryBtn from "../Components/SecondaryBtn/SecondaryBtn";
+import Comment from "../Components/Comment/Comment";
+import Seperator from "../Components/Seperator/Seperator";
 import styles from "../styles/BookPage.module.css";
 
 const BookPage = (props) => {
@@ -12,8 +17,8 @@ const BookPage = (props) => {
       style={{ top: 70 }}
     >
       <div className="d-flex justify-content-center align-items-center"></div>
-      <div className="row mb-5 g-lg-5">
-        <div className={`col-3 ${styles.bookImgContainer}`}>
+      <div className="row m-0 mb-3 g-lg-5">
+        <div className={`col-3 ${styles.bookImgContainer} m-0`}>
           <span className={`${styles.features}`}>
             <img
               src={require("../imgs/headphone-sound.png")}
@@ -28,7 +33,7 @@ const BookPage = (props) => {
           </span>
           <img src={require("../imgs/book1.png")} alt="Book" />
         </div>
-        <div className="col-6 position-relative">
+        <div className="col-6 position-relative m-0">
           <span className={`${styles.views} position-absolute`}>
             1.2k
             <img
@@ -70,7 +75,7 @@ const BookPage = (props) => {
             </span>
           </div>
         </div>
-        <div className={`col-3 ${styles.purchaseBox}`}>
+        <div className={`col-3 ${styles.purchaseBox} m-0`}>
           <p className={`${styles.price}`}>
             السعر:
             <span>120</span>
@@ -101,10 +106,29 @@ const BookPage = (props) => {
           <PrimaryBtn text="اشتتري الان" />
         </div>
       </div>
+      <div className={`row `}>
+        <BookDetails
+          publisher="Faber & Faber"
+          date="1 March 2018"
+          iSBN13="9780571333134"
+          style="col-3"
+        />
+        <BookLinks style="col-3 me-auto" />
+      </div>
+      <Seperator width="col-11 mb-5 mt-5 ms-auto me-auto" />
+      <h4 className="mb-5">التعليقات والملخصات</h4>
+      <BookCommentInput />
+      <Seperator width="col-7 mb-5 mt-5 me-5 ms-auto" />
+      <Comment commentContent="انا ايمن صديق البرنامج واحبكم في الله" />
+      <Comment commentContent="انا ايمن صديق البرنامج واحبكم في الله" />
+      <Comment commentContent="انا ايمن صديق البرنامج واحبكم في الله" />
+      <Comment commentContent="انا ايمن صديق البرنامج واحبكم في الله" />
+      <Seperator width="col-11 mb-5 mt-5 ms-auto me-auto" />
       <BookSection
         sectionName="القراء بحثوا ايضا عن هذه الكتب"
         booksNumber={booksNumberArr}
       />
+      <Seperator width="col-11 mb-5 mt-5 ms-auto me-auto" />
       <BookSection sectionName="عناصر مشابهة" booksNumber={booksNumberArr} />
     </div>
   );

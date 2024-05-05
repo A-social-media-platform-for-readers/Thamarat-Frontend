@@ -18,11 +18,15 @@ ul li {
   .sidebar {
     width: 40px;
     right: 0;
-    padding-right: 10px;
   }
   .sidebar:hover {
     width: 100%;
     transition: all 0.3s ease;
+  }
+  .types > span,
+  .catigories > span,
+  .allCatigories > span {
+    padding-right: 10px;
   }
   .sectionTitle {
     opacity: 0;

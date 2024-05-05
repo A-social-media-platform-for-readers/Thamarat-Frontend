@@ -25,7 +25,7 @@ const Navbar = (props) => {
         const content = await response.json();
         console.log(content);
         localStorage.removeItem("token");
-        navigate("/");
+        navigate("/thamarat-frontend");
       } else {
         console.log("error");
       }

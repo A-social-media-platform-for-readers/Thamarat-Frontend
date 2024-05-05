@@ -32,7 +32,7 @@ const Sidebar = () => {
             </li>
           </ul>
         </div>
-        <div className="catigories w-100 mt-4">
+        <div className={`w-100 mt-4 ${styles.catigories}`}>
           <span className={`text-secondary ${styles.sectionTitle}`}>
             التصنيفات
           </span>
@@ -64,7 +64,7 @@ const Sidebar = () => {
             </li>
           </ul>
         </div>
-        <div className="allCatigories w-100 mt-4">
+        <div className={`${styles.allCatigories} w-100 mt-4`}>
           <span className={`text-secondary ${styles.sectionTitle}`}>
             جميع الأنواع
           </span>

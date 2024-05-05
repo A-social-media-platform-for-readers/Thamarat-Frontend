@@ -15,7 +15,7 @@ import BookPage from "./routes/BookPage";
 
 const routes = createBrowserRouter([
   {
-    path: "/thamarat-frontend/",
+    path: "/thamarat-frontend",
     element: <Root />,
     children: [
       {
