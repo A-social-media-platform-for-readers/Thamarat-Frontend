@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-
-//Components
 import Navbar from "../Components/Navbar/Navbar";
 import Sidebar from "../Components/Sidebar/Sidebar";
-import { Outlet } from "react-router-dom";
+import PostContainer from "../Components/PostContainer/PostContainer";
+import PostsContainer from "../Components/PostsContainer/PostsContainer";
 
-const Home = () => {
+const SocialMedia = () => {
   const [userName, setUserName] = useState(""); // Set the user name according to the user data sent back
 
   const jwt = localStorage.getItem("token");
@@ -39,9 +38,9 @@ const Home = () => {
     >
       <Navbar userName={userName} />
       <Sidebar />
-      <Outlet />
+      <PostsContainer />
     </div>
   );
 };
 
-export default Home;
+export default SocialMedia;

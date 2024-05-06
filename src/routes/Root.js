@@ -14,7 +14,10 @@ const Root = () => {
 
   let imgSrc;
 
-  if (location.pathname === "/thamarat-frontend") {
+  if (
+    location.pathname === "/thamarat-frontend" ||
+    location.pathname === "/thamarat-frontend/"
+  ) {
     imgSrc = imgs[0];
   } else if (location.pathname === "/thamarat-frontend/ForgotPassword") {
     imgSrc = imgs[1];

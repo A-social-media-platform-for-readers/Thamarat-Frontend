@@ -10,8 +10,9 @@ import ForgotPassword from "./routes/ForgotPassword";
 import Login from "./routes/Login";
 import SignUp1 from "./routes/SignUp1";
 import Home from "./routes/Home";
-import BookStore from "./Components/BookStore/BookStore";
 import BookPage from "./routes/BookPage";
+import SocialMedia from "./routes/SocialMedia";
+import BookStore from "./Components/BookStore/BookStore";
 
 const routes = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const routes = createBrowserRouter([
         element: <BookPage />,
       },
     ],
+  },
+  {
+    path: "/SocialMedia",
+    element: <SocialMedia />,
   },
 ]);
 
