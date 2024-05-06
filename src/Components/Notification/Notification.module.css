@@ -1,0 +1,17 @@
+.notificationContainer > img {
+  width: 50px;
+  border: 2px solid #699cff;
+  border-radius: 50%;
+}
+.notification div:nth-child(2) {
+  font-size: 12px;
+  line-height: 1;
+  color: #6e6e6e;
+}
+.notificationContainer span {
+  font-size: 10px;
+  color: #797c7b;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}

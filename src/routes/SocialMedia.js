@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Sidebar from "../Components/Sidebar/Sidebar";
 import PostsContainer from "../Components/PostsContainer/PostsContainer";
+import Notifications from "../Components/Notifications/Notifications";
+
+import styles from "../styles/SocialMedia.module.css";
 
 const SocialMedia = () => {
   const [userName, setUserName] = useState(""); // Set the user name according to the user data sent back
@@ -31,14 +34,19 @@ const SocialMedia = () => {
   }, []);
 
   return (
-    <div
-      className="container-md pt-5 d-flex justify-content-between position-relative"
-      style={{ height: "100vh" }}
-    >
-      <Navbar userName={userName} />
-      <Sidebar />
-      <PostsContainer name={userName} />
-    </div>
+    <>
+      <div
+        className="container-md pt-5 d-flex justify-content-between position-relative"
+        style={{ height: "100vh" }}
+      >
+        <Navbar userName={userName} />
+        <Sidebar />
+        <div className={`${styles.socialMediaContent} row`}>
+          <PostsContainer name={userName} />
+        </div>
+      </div>
+      <Notifications />
+    </>
   );
 };
 

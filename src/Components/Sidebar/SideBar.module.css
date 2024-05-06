@@ -24,7 +24,7 @@ ul li img {
 
 @media (max-width: 991px) {
   .sidebar {
-    width: 40px;
+    width: 35px;
     right: 0;
   }
   .sidebar:hover {

@@ -1,0 +1,35 @@
+.notificationContainer {
+  position: absolute;
+  top: 140px;
+  background-color: #f0f5fc;
+  border-radius: 0px 8px 8px 0px;
+  left: 0;
+  width: 240px;
+  padding: 10px 15px 25px;
+}
+@media (min-width: 992px) {
+  .notificationContainer {
+    width: 260px;
+  }
+}
+@media (min-width: 1200px) {
+  .notificationContainer {
+    width: 340px;
+  }
+}
+@media (min-width: 1400px) {
+  .notificationContainer {
+    width: 360px;
+  }
+}
+.sectionTitle {
+  position: relative;
+  top: -40px;
+}
+.sectionTitle > div {
+  cursor: pointer;
+}
+.functions img {
+  cursor: pointer;
+  margin-right: 10px;
+}

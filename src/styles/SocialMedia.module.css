@@ -1,0 +1,9 @@
+.socialMediaContent {
+  width: calc(100% - 200px);
+}
+
+@media (max-width: 991px) {
+  .socialMediaContent {
+    width: 100%;
+  }
+}
