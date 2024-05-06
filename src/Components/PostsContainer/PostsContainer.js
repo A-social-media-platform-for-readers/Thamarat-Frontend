@@ -1,11 +1,14 @@
 import PostContainer from "../PostContainer/PostContainer";
 import styles from "./PostsContainer.module.css";
-const PostsContainer = () => {
+const PostsContainer = (props) => {
   return (
     <div className={`${styles.postsContainer}`}>
-      <PostContainer />
-      <PostContainer postImage={require("../../imgs/postImg.png")} />
-      <PostContainer />
+      <PostContainer name={props.name} />
+      <PostContainer
+        postImage={require("../../imgs/postImg.png")}
+        name={props.name}
+      />
+      <PostContainer name={props.name} />
     </div>
   );
 };

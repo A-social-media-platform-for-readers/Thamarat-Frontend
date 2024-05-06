@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Sidebar from "../Components/Sidebar/Sidebar";
-import PostContainer from "../Components/PostContainer/PostContainer";
 import PostsContainer from "../Components/PostsContainer/PostsContainer";
 
 const SocialMedia = () => {
@@ -38,7 +37,7 @@ const SocialMedia = () => {
     >
       <Navbar userName={userName} />
       <Sidebar />
-      <PostsContainer />
+      <PostsContainer name={userName} />
     </div>
   );
 };

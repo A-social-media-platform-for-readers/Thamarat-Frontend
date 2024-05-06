@@ -10,7 +10,7 @@ const PostContainer = (props) => {
               className={`${styles.userInfo} d-flex align-items-center text-start `}
             >
               <div className="ms-3">
-                <div className="">Ayman Ehab</div>
+                <div className="">{props.name}</div>
                 <div className="text-secondary">Auther and Reader</div>
               </div>
               <img
