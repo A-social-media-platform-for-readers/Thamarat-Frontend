@@ -1,0 +1,18 @@
+.toggleBtn {
+  width: 20px;
+  height: 20px;
+  background-color: #f1f1f2;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.toggleBtn span {
+  width: 2.5px;
+  height: 2.5px;
+  background-color: #a1a5b7;
+  border-radius: 50%;
+}

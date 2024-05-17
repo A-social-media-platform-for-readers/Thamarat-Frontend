@@ -1,3 +1,4 @@
+import ToggleBtn from "../ToggleBtn/ToggleBtn";
 import styles from "./PostContainer.module.css";
 const PostContainer = (props) => {
   return (
@@ -5,8 +6,11 @@ const PostContainer = (props) => {
       <div
         className={`${styles.firstPostSec} d-flex justify-content-between p-3`}
       >
-        <div className={`${styles.followBtn} btn btn-light rounded-2`}>
-          Follow
+        <div className="d-flex align-items-center">
+          <ToggleBtn />
+          <div className={`${styles.followBtn} btn btn-light rounded-2`}>
+            Follow
+          </div>
         </div>
         <div
           className={`${styles.userInfo} d-flex align-items-center text-start `}
