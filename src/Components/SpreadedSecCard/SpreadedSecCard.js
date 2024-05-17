@@ -46,7 +46,7 @@ const SpreadedSecCard = (props) => {
           className="me-2"
         />
       </span>
-      <Link to="BookPage">
+      <Link to={`BookPage/${props.id}`}>
         <img src={require("../../imgs/book1.png")} alt="Book" />
       </Link>
       <div className={`${styles.bookDetails} p-3 pb-1`}>

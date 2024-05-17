@@ -1,15 +1,182 @@
+import { useState, useEffect } from "react";
 import styles from "./FeedSection.module.css";
 
 import BookSection from "../BookSection/BookSection";
 import SpreadedSection from "../SpreadedSection/SpreadedSection";
 
 const FeedSection = () => {
-  const booksNumberArr = ["1", "2", "3", "4"];
+  const jwt = localStorage.getItem("token");
+
+  const [popularContent, setPopularContent] = useState([
+    {
+      id: 0,
+      title: "string",
+      author: "string",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-05-07",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+    {
+      id: 0,
+      title: "string",
+      author: "string",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-05-07",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+    {
+      id: 0,
+      title: "string",
+      author: "string",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-05-07",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+    {
+      id: 0,
+      title: "string",
+      author: "string",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-05-07",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+  ]);
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(
+        "https://backend-9s26.onrender.com/books/popular-books/",
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${jwt}`,
+          },
+          credentials: "include", // Include cookies with the request
+        }
+      );
+
+      const content = await response.json();
+      console.log(content.results);
+      setPopularContent(content.results);
+      console.log(popularContent);
+    })();
+  }, []);
+  const [mostRatedContent, setMostRatedContent] = useState([
+    {
+      id: 0,
+      title: "string",
+      author: "string",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-05-07",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+    {
+      id: 0,
+      title: "string",
+      author: "string",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-05-07",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+    {
+      id: 0,
+      title: "string",
+      author: "string",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-05-07",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+    {
+      id: 0,
+      title: "string",
+      author: "string",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-05-07",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+  ]);
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(
+        "https://backend-9s26.onrender.com/books/high-rate/",
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${jwt}`,
+          },
+          credentials: "include", // Include cookies with the request
+        }
+      );
+
+      const content = await response.json();
+      console.log(content.results);
+      setMostRatedContent(content.results);
+      console.log(mostRatedContent);
+    })();
+  }, []);
+
   return (
     <div className={`${styles.feedSection}`}>
-      <BookSection sectionName="كتاب اليوم" booksNumber={booksNumberArr} />
+      <BookSection sectionName="كتاب اليوم" content={popularContent} />
       <SpreadedSection sectionName="الأكثر وراجاً لهذا الإسبوع" />
-      <BookSection sectionName="الأعلى تقييماً" booksNumber={booksNumberArr} />
+      <BookSection sectionName="الأعلى تقييماً" content={mostRatedContent} />
     </div>
   );
 };

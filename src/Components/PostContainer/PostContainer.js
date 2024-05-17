@@ -3,7 +3,9 @@ const PostContainer = (props) => {
   return (
     <div className={`${styles.postContent} mb-4`}>
       <div className={`d-flex justify-content-between me-4 ms-4`}>
-        <div className={`${styles.followBtn}`}>Follow</div>
+        <div className={`${styles.followBtn} btn btn-primary rounded-2`}>
+          Follow
+        </div>
         <div
           className={`${styles.userInfo} d-flex align-items-center text-start `}
         >

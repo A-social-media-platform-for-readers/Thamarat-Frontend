@@ -30,6 +30,91 @@ const Home = () => {
       console.log(content);
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  });
+
+  const [books, setBooks] = useState([
+    {
+      id: 0,
+      title: "string",
+      author: "string",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-04-22",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+    {
+      id: 0,
+      title: "string",
+      author: "string",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-04-22",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+    {
+      id: 0,
+      title: "string",
+      author: "string",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-04-22",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+    {
+      id: 0,
+      title: "string",
+      author: "string",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-04-22",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+  ]);
+
+  // Request book data from backend
+  useEffect(() => {
+    (async () => {
+      const response = await fetch("https://backend-9s26.onrender.com/books/", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${jwt}`,
+        },
+        credentials: "include",
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch");
+      }
+
+      const content = await response.json();
+      setBooks(content.results);
+      console.log(content);
+      console.log(books);
+    })();
   }, []);
 
   return (
@@ -39,7 +124,7 @@ const Home = () => {
     >
       <Navbar userName={userName} />
       <Sidebar />
-      <Outlet />
+      <Outlet context={[books]} />
     </div>
   );
 };

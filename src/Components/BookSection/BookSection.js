@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import sectionStyles from "./BookSection.module.css";
 
 import { Link } from "react-router-dom";
 
-const BookSection = ({ sectionName, booksNumber = [] }) => {
-  console.log(booksNumber);
-  console.log(document.getElementById("imgContainer"));
-  // document.getElementById(
-  //   "imgContainer"
-  // ).style.gridTemplateColumns = `repeat(${booksNumber.length}, 1fr)`;
+const BookSection = ({ sectionName, content }) => {
+  console.log(content);
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    content === undefined ? setReady(false) : setReady(true);
+  }, [content]);
+
   return (
     <div className={`${sectionStyles.bookSection}`}>
       <div
@@ -18,18 +19,23 @@ const BookSection = ({ sectionName, booksNumber = [] }) => {
         <span className={`text-secondary fs-6`}>عرض المزيد</span>
       </div>
       <div className={`${sectionStyles.imgContainer} row`}>
-        {booksNumber.length > 0 &&
-          booksNumber.map((e) => (
-            <Link to="BookPage" key={e} className="col p-0">
-              <img src={require("../../imgs/book1.png")} alt="Book" />
-              <span className={`${sectionStyles.bookAuthor}`}>
-                Author{`${e}`}
-              </span>
-              <span className={`${sectionStyles.bookTitle}`}>
-                Book Title{`${e}`}
-              </span>
-            </Link>
-          ))}
+        {ready
+          ? content.map((e, i) => (
+              <Link
+                to={`BookPage/${content[i].id}/`}
+                key={i}
+                className="col p-0"
+              >
+                <img src={require("../../imgs/book1.png")} alt="Book" />
+                <span className={`${sectionStyles.bookAuthor}`}>
+                  {content[i].author}
+                </span>
+                <span className={`${sectionStyles.bookTitle}`}>
+                  {content[i].title}
+                </span>
+              </Link>
+            ))
+          : console.log("Error")}
       </div>
     </div>
   );

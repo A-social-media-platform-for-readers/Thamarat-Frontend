@@ -42,7 +42,7 @@ const routes = createBrowserRouter([
         element: <BookStore />,
       },
       {
-        path: "/Home/BookPage",
+        path: "/Home/BookPage/:id/",
         element: <BookPage />,
       },
     ],

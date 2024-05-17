@@ -1,3 +1,6 @@
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import AttributeBox from "../Components/AttributeBox/AttributeBox";
 import BookCommentInput from "../Components/BookCommentInput/BookCommentInput";
 import BookDetails from "../Components/BookDetails/BookDetails";
@@ -11,6 +14,51 @@ import styles from "../styles/BookPage.module.css";
 
 const BookPage = (props) => {
   const booksNumberArr = [1, 2, 3, 4, 5, 6];
+
+  const { id } = useParams();
+
+  const jwt = localStorage.getItem("token");
+
+  const [book, setBook] = useState({
+    id: 0,
+    title: "string",
+    author: "string",
+    rate: 5,
+    price: 10000,
+    genre: "string",
+    publisher: "string",
+    publication_date: "2024-05-17",
+    description: "string",
+    readers_count: 2147483647,
+    to_read_count: 2147483647,
+    cover_image: "string",
+    pdf_file: "string",
+  });
+
+  // Request book data from backend
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(
+        `https://backend-9s26.onrender.com/books/${id}/`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${jwt}`,
+          },
+          credentials: "include",
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch");
+      }
+
+      const content = await response.json();
+      setBook(content);
+      console.log(content);
+      console.log(book, "success");
+    })();
+  }, []);
   return (
     <div
       className={`d-flex flex-column position-relative ${styles.bookPageContainer}`}
@@ -51,9 +99,9 @@ const BookPage = (props) => {
             />
           </span>
           <div className={`${styles.bookDetails}`}>
-            <p className={`m-0 fs-5`}>المؤلف</p>
+            <p className={`m-0 fs-5`}>{book.author}</p>
             <p className={`fs-3 mb-5 position-relative ${styles.bookTitle}`}>
-              اسم الكتاب
+              {book.title}
             </p>
             <p className={`${styles.bookDesc} mb-2 mb-lg-3`}>
               <strong> الوصف</strong>
