@@ -5,6 +5,7 @@ import PostsContainer from "../Components/PostsContainer/PostsContainer";
 import Notifications from "../Components/Notifications/Notifications";
 
 import styles from "../styles/SocialMedia.module.css";
+import NotificationContainer from "../Components/NotificationSecContainer/NotificationSecContainer";
 
 const SocialMedia = () => {
   const [userName, setUserName] = useState(""); // Set the user name according to the user data sent back
@@ -45,6 +46,7 @@ const SocialMedia = () => {
           <PostsContainer name={userName} />
         </div>
       </div>
+      <NotificationContainer />
       <Notifications />
     </>
   );

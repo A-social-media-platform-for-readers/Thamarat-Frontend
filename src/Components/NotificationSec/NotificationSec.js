@@ -1,6 +1,6 @@
-import styles from "./Notification.module.css";
+import styles from "./NotificationSec.module.css";
 
-const Notification = (props) => {
+const NotificationSec = (props) => {
   function ellipsify(str) {
     if (str.length > 50) {
       return str.substring(0, 50) + "...";
@@ -13,14 +13,13 @@ const Notification = (props) => {
     <div
       className={`${styles.notificationContainer} d-flex justifiy-content-around align-items-center mb-3 position-relative`}
     >
-      <img src={require("../../imgs/yazood.png")} alt="Profile" />
+      <img src={require("../../imgs/notification.jpg")} alt="Profile" />
       <div className={`${styles.notification} me-2`}>
-        <div>Yazood</div>
+        <div className="fs-5">Offer 50%</div>
         <div>{ellipsify(props.text)}</div>
       </div>
-      <span>1hr</span>
     </div>
   );
 };
 
-export default Notification;
+export default NotificationSec;

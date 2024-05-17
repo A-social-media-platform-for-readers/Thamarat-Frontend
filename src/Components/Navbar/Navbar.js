@@ -65,7 +65,7 @@ const Navbar = (props) => {
           type="button"
           onClick={handleClick}
           className="btn btn-danger rounded-pill position-absolute"
-          style={{ top: 560, left: 0 }}
+          style={{ top: 780, left: 0 }}
         >
           Logout
         </button>

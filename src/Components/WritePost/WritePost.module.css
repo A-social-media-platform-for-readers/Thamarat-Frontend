@@ -1,0 +1,22 @@
+.postText {
+  width: 100%;
+  height: 100px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  resize: none;
+}
+.writePost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 2px 8px 1px rgba(0, 0, 0, 0.15);
+}
+textarea:focus {
+  outline: none;
+}
+textarea::placeholder {
+  transform: translateY(20px);
+}

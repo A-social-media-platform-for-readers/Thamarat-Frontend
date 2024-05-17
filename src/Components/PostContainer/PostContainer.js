@@ -2,8 +2,10 @@ import styles from "./PostContainer.module.css";
 const PostContainer = (props) => {
   return (
     <div className={`${styles.postContent} mb-4`}>
-      <div className={`d-flex justify-content-between me-4 ms-4`}>
-        <div className={`${styles.followBtn} btn btn-primary rounded-2`}>
+      <div
+        className={`${styles.firstPostSec} d-flex justify-content-between p-3`}
+      >
+        <div className={`${styles.followBtn} btn btn-light rounded-2`}>
           Follow
         </div>
         <div
@@ -45,7 +47,7 @@ const PostContainer = (props) => {
         </div>
       </div>
       <div
-        className={`${styles.postFooter} ms-4 me-4 d-flex justify-content-between align-items-center`}
+        className={`${styles.postFooter} d-flex justify-content-between align-items-center p-3 `}
       >
         <div className="d-flex align-items-center">
           <img
