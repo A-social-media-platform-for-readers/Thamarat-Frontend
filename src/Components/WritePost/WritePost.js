@@ -45,7 +45,7 @@ const WritePost = (props) => {
               borderRadius: 6,
               marginTop: "20px",
             }}
-            src="https://via.placeholder.com/40x40"
+            src={require("../../imgs/profileImg.jpg")}
             alt="identity"
           />
         </div>
@@ -69,7 +69,6 @@ const WritePost = (props) => {
             style={{
               color: "black",
               fontSize: 13,
-              fontFamily: "Inter",
               fontWeight: "600",
               lineHeight: 1.6,
               wordWrap: "break-word",
@@ -100,7 +99,6 @@ const WritePost = (props) => {
           style={{
             color: "white",
             fontSize: 12,
-            fontFamily: "Inter",
             fontWeight: "600",
             lineHeight: 12,
             wordWrap: "break-word",
