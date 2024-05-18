@@ -42,21 +42,42 @@ const Navbar = (props) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setDebounce(term);
-    }, 1500);
+    }, 500);
     return () => clearTimeout(timeout);
   }, [term]);
 
-  useEffect(() => {
-    const search = async () => {
-      const response = await axios.get(
-        `https://backend-9s26.onrender.com/books/search/${debounce}/`
-      );
-      setResults(response);
-      console.log(response);
-    };
+  const searchInput = React.useRef(null);
 
-    search();
-  }, [debounce]);
+  useEffect(() => {
+    if (
+      document.activeElement === searchInput.current &&
+      searchInput.current.value !== ""
+    ) {
+      (async () => {
+        const response = await fetch(
+          `https://backend-9s26.onrender.com/books/search/${debounce}/`,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `${jwt}`,
+            },
+            credentials: "include",
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch");
+        }
+
+        const content = await response.json();
+        setResults(content.results);
+        document.querySelector(`.${styles.searchResults}`).style.display =
+          "block";
+        document.querySelector(`.${styles.closeSearch}`).style.display =
+          "block";
+      })();
+    }
+  }, [debounce, jwt]);
 
   const searchResults = results.map((result) => {
     return (
@@ -64,7 +85,7 @@ const Navbar = (props) => {
         <th scope="row">{result.id}</th>
         <td>{result.title}</td>
         <td>{result.author}</td>
-        <td>@mdo</td>
+        <td>{result.rate}</td>
       </tr>
     );
   });
@@ -87,7 +108,7 @@ const Navbar = (props) => {
             onSubmit={(e) => e.preventDefault()}
           >
             <input
-              className="form-control me-2 rounded-pill"
+              className={`form-control me-2 rounded-pill`}
               type="search"
               placeholder="بحث"
               aria-label="Search"
@@ -95,6 +116,8 @@ const Navbar = (props) => {
               onChange={(e) => {
                 setTerm(e.target.value);
               }}
+              id="searchBar"
+              ref={searchInput}
             />
             <button
               className="btn btn-outline-success rounded-circle"
@@ -145,13 +168,23 @@ const Navbar = (props) => {
         </div>
       </div>
       <div className={`${styles.searchResults}`}>
+        <button
+          className={`${styles.closeSearch} bg-danger`}
+          onClick={(e) => {
+            document.querySelector(`.${styles.searchResults}`).style.display =
+              "none";
+            e.target.style.display = "none";
+          }}
+        >
+          X
+        </button>
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">رقم الكتاب</th>
+              <th scope="col">إسم الكتاب</th>
+              <th scope="col">المؤلف</th>
+              <th scope="col">التقييم</th>
             </tr>
           </thead>
           <tbody>{searchResults}</tbody>

@@ -34,7 +34,7 @@
   line-height: 2.7;
 }
 .searchResults {
-  /* display: none; */
+  display: none;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -42,4 +42,17 @@
   top: 60px;
   z-index: 10002;
   background-color: rgb(255 255 255 / 80%);
+}
+.closeSearch {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.7;
+  border: none;
 }

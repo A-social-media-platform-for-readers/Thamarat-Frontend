@@ -3,7 +3,7 @@ import styles from "./NotificationSecContainer.module.css";
 
 const NotificationContainer = () => {
   return (
-    <div className={`${styles.notificationContainer} col-4`}>
+    <div className={`${styles.notificationSecContainer} col-4`}>
       <div
         className={`d-flex justify-content-between align-items-center ${styles.sectionTitle}`}
       >
