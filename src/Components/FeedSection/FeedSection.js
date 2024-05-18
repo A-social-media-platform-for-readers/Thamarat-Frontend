@@ -84,11 +84,9 @@ const FeedSection = () => {
       );
 
       const content = await response.json();
-      console.log(content.results);
       setPopularContent(content.results);
-      console.log(popularContent);
     })();
-  }, []);
+  }, [jwt]);
   const [mostRatedContent, setMostRatedContent] = useState([
     {
       id: 0,
@@ -166,11 +164,9 @@ const FeedSection = () => {
       );
 
       const content = await response.json();
-      console.log(content.results);
       setMostRatedContent(content.results);
-      console.log(mostRatedContent);
     })();
-  }, []);
+  }, [jwt]);
 
   return (
     <div className={`${styles.feedSection}`}>

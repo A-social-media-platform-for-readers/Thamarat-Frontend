@@ -55,10 +55,8 @@ const BookPage = (props) => {
 
       const content = await response.json();
       setBook(content);
-      console.log(content);
-      console.log(book, "success");
     })();
-  }, []);
+  }, [id, jwt]);
   return (
     <div
       className={`d-flex flex-column position-relative ${styles.bookPageContainer}`}
@@ -159,9 +157,9 @@ const BookPage = (props) => {
           publisher="Faber & Faber"
           date="1 March 2018"
           iSBN13="9780571333134"
-          style="col-3"
+          styleElement="col-3"
         />
-        <BookLinks style="col-3 me-auto" />
+        <BookLinks linksStyle="col-3 me-auto" />
       </div>
       <Seperator width="col-11 mb-5 mt-5 ms-auto me-auto" />
       <h4 className="mb-5">التعليقات والملخصات</h4>

@@ -27,9 +27,7 @@ const Home = () => {
 
       const content = await response.json();
       setUserName(content.name);
-      console.log(content);
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   });
 
   const [books, setBooks] = useState([
@@ -112,10 +110,8 @@ const Home = () => {
 
       const content = await response.json();
       setBooks(content.results);
-      console.log(content);
-      console.log(books);
     })();
-  }, []);
+  }, [jwt]);
 
   return (
     <div

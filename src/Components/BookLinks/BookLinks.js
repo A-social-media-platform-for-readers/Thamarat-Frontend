@@ -1,6 +1,6 @@
 const BookLinks = (props) => {
   return (
-    <div className={`${props.style}`}>
+    <div className={`${props.linksStyle}`}>
       <div className="text-center">
         <h6>Share this book</h6>
       </div>
