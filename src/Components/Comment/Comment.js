@@ -20,11 +20,11 @@ const Comment = (props) => {
             alt="img"
           />
           <div>
-            <span className="ms-2">3</span>
+            <span className="ms-2">{props.likesCount}</span>
             أعجبني
           </div>
         </div>
-        <div>رد</div>
+        <div className="me-3">رد</div>
       </div>
     </div>
   );

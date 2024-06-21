@@ -177,7 +177,7 @@ const Navbar = (props) => {
         >
           X
         </button>
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">رقم الكتاب</th>

@@ -10,8 +10,8 @@ const FeedSection = () => {
   const [popularContent, setPopularContent] = useState([
     {
       id: 0,
-      title: "string",
-      author: "string",
+      title: "string1",
+      author: "string1",
       rate: 5,
       price: 10000,
       genre: "string",
@@ -90,8 +90,8 @@ const FeedSection = () => {
   const [mostRatedContent, setMostRatedContent] = useState([
     {
       id: 0,
-      title: "string",
-      author: "string",
+      title: "string1",
+      author: "string1",
       rate: 5,
       price: 10000,
       genre: "string",
@@ -169,8 +169,8 @@ const FeedSection = () => {
   }, [jwt]);
 
   return (
-    <div className={`${styles.feedSection}`}>
-      <BookSection sectionName="كتاب اليوم" content={popularContent} />
+    <div className={`${styles.feedSection} position-relative`}>
+      <BookSection sectionName="الكتب المشهورة" content={popularContent} />
       <SpreadedSection sectionName="الأكثر وراجاً لهذا الإسبوع" />
       <BookSection sectionName="الأعلى تقييماً" content={mostRatedContent} />
     </div>

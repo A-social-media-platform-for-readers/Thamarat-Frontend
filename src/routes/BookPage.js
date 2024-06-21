@@ -163,7 +163,7 @@ const BookPage = (props) => {
       </div>
       <Seperator width="col-11 mb-5 mt-5 ms-auto me-auto" />
       <h4 className="mb-5">التعليقات والملخصات</h4>
-      <BookCommentInput />
+      <BookCommentInput desc="أضف تعليقك أو ملخصك..." eleWidth="70%" />
       <Seperator width="col-7 mb-5 mt-5 me-5 ms-auto" />
       <Comment commentContent="انا ايمن صديق البرنامج واحبكم في الله" />
       <Comment commentContent="انا ايمن صديق البرنامج واحبكم في الله" />
