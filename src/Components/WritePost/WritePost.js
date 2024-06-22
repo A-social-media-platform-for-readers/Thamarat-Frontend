@@ -6,7 +6,7 @@ const WritePost = (props) => {
 
   const handleNewPost = async () => {
     result.content = document.getElementById("newPost").value;
-    await fetch(
+    let response = await fetch(
       "https://backend-9s26.onrender.com/social-media/posts/create/",
       {
         method: "POST",
@@ -17,8 +17,9 @@ const WritePost = (props) => {
         body: JSON.stringify(result),
       }
     );
-    console.log();
+    let content = await response.json();
     document.getElementById("newPost").value = "";
+    props.addPost(content);
   };
 
   return (

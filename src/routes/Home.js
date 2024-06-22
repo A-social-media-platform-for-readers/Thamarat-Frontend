@@ -28,7 +28,7 @@ const Home = () => {
       const content = await response.json();
       setUserName(content);
     })();
-  });
+  }, [jwt]);
 
   return (
     <div

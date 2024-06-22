@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import AttributeBox from "../Components/AttributeBox/AttributeBox";
 import BookCommentInput from "../Components/BookCommentInput/BookCommentInput";
+import Loading from "../Components/Loading/Loading";
 import BookDetails from "../Components/BookDetails/BookDetails";
 import BookLinks from "../Components/BookLinks/BookLinks";
 import BookSection from "../Components/BookSection/BookSection";
@@ -56,11 +57,38 @@ const BookPage = (props) => {
       const content = await response.json();
       setBook(content);
     })();
-  }, [id, jwt]);
+  }, [jwt, id]);
+
+  const [commentsCount, setCommentsCount] = useState(props.comment_count);
+  const [comments, setComments] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(
+        `https://backend-9s26.onrender.com/books/reviews/${id}/`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${jwt}`,
+          },
+        }
+      );
+      let content = await response.json();
+      setComments(content);
+      setIsLoading(false);
+    })();
+  }, [jwt, id]);
+
+  const addComment = (newComment) => {
+    setComments([newComment, ...comments]);
+    setCommentsCount(commentsCount + 1);
+  };
+
   return (
     <div
       className={`d-flex flex-column position-relative ${styles.bookPageContainer}`}
-      style={{ top: 70 }}
+      style={{ top: 70, height: "fit-content" }}
     >
       <div className="d-flex justify-content-center align-items-center"></div>
       <div className="row m-0 mb-3 g-lg-5">
@@ -163,19 +191,31 @@ const BookPage = (props) => {
       </div>
       <Seperator width="col-11 mb-5 mt-5 ms-auto me-auto" />
       <h4 className="mb-5">التعليقات والملخصات</h4>
-      <BookCommentInput desc="أضف تعليقك أو ملخصك..." eleWidth="70%" />
+      <BookCommentInput
+        desc="أضف تعليقك أو ملخصك..."
+        eleWidth="70%"
+        postId={id}
+        addComment={addComment}
+      />
       <Seperator width="col-7 mb-5 mt-5 me-5 ms-auto" />
-      <Comment commentContent="انا ايمن صديق البرنامج واحبكم في الله" />
-      <Comment commentContent="انا ايمن صديق البرنامج واحبكم في الله" />
-      <Comment commentContent="انا ايمن صديق البرنامج واحبكم في الله" />
-      <Comment commentContent="انا ايمن صديق البرنامج واحبكم في الله" />
+      {isLoading ? (
+        <Loading />
+      ) : (
+        comments.map((comment) => (
+          <Comment
+            commentContent={comment.content}
+            key={comment.id}
+            likesCount={comment.like_count}
+          />
+        ))
+      )}
       <Seperator width="col-11 mb-5 mt-5 ms-auto me-auto" />
       <BookSection
         sectionName="القراء بحثوا ايضا عن هذه الكتب"
-        booksNumber={booksNumberArr}
+        content={booksNumberArr}
       />
       <Seperator width="col-11 mb-5 mt-5 ms-auto me-auto" />
-      <BookSection sectionName="عناصر مشابهة" booksNumber={booksNumberArr} />
+      <BookSection sectionName="عناصر مشابهة" content={booksNumberArr} />
     </div>
   );
 };

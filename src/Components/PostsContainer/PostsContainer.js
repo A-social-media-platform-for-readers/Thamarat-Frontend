@@ -34,15 +34,20 @@ const PostsContainer = (props) => {
         })();
       } else {
         console.log("Done");
+        clearInterval(interval);
       }
     }, 3000);
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, [next, jwt]);
+  }, [posts, next, jwt]);
+
+  const addPost = (newPost) => {
+    setPosts([newPost, ...posts]);
+  };
 
   return (
     <div className={`${styles.postsContainer} col-8`}>
-      <WritePost />
+      <WritePost addPost={addPost} />
       <div className="feed">
         {loading ? (
           <Loading />

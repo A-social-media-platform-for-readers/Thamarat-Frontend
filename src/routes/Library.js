@@ -26,7 +26,7 @@ const Library = () => {
       }
 
       const content = await response.json();
-      setToReadBooks(content.results);
+      setToReadBooks(content);
     })();
   }, [jwt]);
 
@@ -49,7 +49,7 @@ const Library = () => {
       }
 
       const content = await response.json();
-      setReadingBooks(content.results);
+      setReadingBooks(content);
     })();
   }, [jwt]);
 
@@ -72,7 +72,7 @@ const Library = () => {
       }
 
       const content = await response.json();
-      setReadedBooks(content.results);
+      setReadedBooks(content);
     })();
   }, [jwt]);
 
