@@ -47,12 +47,6 @@ const Root = () => {
           className="d-none d-md-block ms-auto me-auto"
         />
       )}
-      {/* <img
-        src={require("../imgs/ReadingIll.png")}
-        alt="Hello"
-        style={{ maxWidth: "50%" }}
-        className="d-none d-md-block ms-auto me-auto"
-      /> */}
     </div>
   );
 };

@@ -56,6 +56,7 @@ const PostsContainer = (props) => {
               comment_count={post.comment_count}
               like_count={post.like_count}
               image={post.image}
+              liked={post.you_liked}
             />
           ))
         )}

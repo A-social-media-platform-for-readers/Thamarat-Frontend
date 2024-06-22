@@ -1,36 +1,52 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Comment from "../Comment/Comment";
 import ToggleBtn from "../ToggleBtn/ToggleBtn";
 import styles from "./PostContainer.module.css";
 import BookCommentInput from "../BookCommentInput/BookCommentInput";
+import Loading from "../Loading/Loading";
 const PostContainer = (props) => {
   const jwt = localStorage.getItem("token");
 
-  let liked = useRef(false);
+  const [liked, setLiked] = useState(props.liked);
   const [likesCount, setLikesCount] = useState(props.like_count);
 
   const handleLike = async () => {
-    await fetch(
-      "https://backend-9s26.onrender.com/social-media/posts/1/likes/",
-      {
-        method: liked.current === false ? "POST" : "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `${jwt}`,
-        },
-        body: JSON.stringify(props.id),
-      }
-    );
-    if (liked.current === false) {
-      setLikesCount(likesCount + 1);
-      liked.current = true;
-    } else {
+    if (liked) {
+      await fetch(
+        `https://backend-9s26.onrender.com/social-media/posts/${props.id}/likes/`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${jwt}`,
+          },
+          body: JSON.stringify(props.id),
+        }
+      );
       setLikesCount(likesCount - 1);
-      liked.current = false;
+      setLiked(false);
+    } else {
+      let response = await fetch(
+        `https://backend-9s26.onrender.com/social-media/posts/${props.id}/likes/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${jwt}`,
+          },
+          body: JSON.stringify(props.id),
+        }
+      );
+      let content = await response.json();
+      console.log(content);
+      setLikesCount(likesCount + 1);
+      setLiked(true);
     }
   };
 
+  const [commentsCount, setCommentsCount] = useState(props.comment_count);
   const [comments, setComments] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleComment = async () => {
     document
@@ -51,7 +67,12 @@ const PostContainer = (props) => {
     );
     let content = await response.json();
     setComments(content.results);
-    console.log(content);
+    setIsLoading(false);
+  };
+
+  const addComment = (newComment) => {
+    setComments([newComment, ...comments]);
+    setCommentsCount(commentsCount + 1);
   };
 
   return (
@@ -63,14 +84,19 @@ const PostContainer = (props) => {
             desc="أضف تعليقك..."
             eleWidth="100%"
             postId={props.id}
+            addComment={addComment}
           />
-          {comments.map((comment, id) => (
-            <Comment
-              key={id}
-              commentContent={comment.content}
-              likesCount={comment.like_count}
-            />
-          ))}
+          {isLoading ? (
+            <Loading />
+          ) : (
+            comments.map((comment, id) => (
+              <Comment
+                key={id}
+                commentContent={comment.content}
+                likesCount={comment.like_count}
+              />
+            ))
+          )}
         </div>
         <div
           className={`${styles.firstPostSec} d-flex justify-content-between p-3`}
@@ -126,7 +152,7 @@ const PostContainer = (props) => {
           <div className="d-flex justify-content-between align-items-center">
             <div className={`d-flex align-items-center`}>
               <div className="ms-2">Comment</div>
-              <span className="me-2 ms-2">{props.comment_count}</span>
+              <span className="me-2 ms-2">{commentsCount}</span>
               <img
                 src={require("../../imgs/comment.png")}
                 alt="comment"
@@ -137,12 +163,19 @@ const PostContainer = (props) => {
             <div className="d-flex align-items-center me-4">
               <div>Like</div>
               <span className="me-2 ms-2">{likesCount}</span>
-              <img
-                src={require("../../imgs/love.png")}
-                alt="like"
-                style={{ width: 20, cursor: "pointer" }}
+              <svg
+                width="15"
+                height="14"
+                viewBox="0 0 15 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
                 onClick={handleLike}
-              />
+              >
+                <path
+                  d="M7.08447 13.5L6.05722 12.5649C2.40872 9.2564 0 7.07439 0 4.39646C0 2.21444 1.71444 0.5 3.89646 0.5C5.12916 0.5 6.31226 1.07384 7.08447 1.98065C7.85668 1.07384 9.03978 0.5 10.2725 0.5C12.4545 0.5 14.1689 2.21444 14.1689 4.39646C14.1689 7.07439 11.7602 9.2564 8.11172 12.5719L7.08447 13.5Z"
+                  fill={liked ? "#EA4335" : "#000000"}
+                />
+              </svg>
             </div>
           </div>
         </div>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
 
 const Navbar = (props) => {
   const jwt = localStorage.getItem("token");
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleClick = () => {
     (async () => {
@@ -64,10 +65,6 @@ const Navbar = (props) => {
           }
         );
 
-        if (!response.ok) {
-          throw new Error("Failed to fetch");
-        }
-
         const content = await response.json();
         setResults(content.results);
         document.querySelector(`.${styles.searchResults}`).style.display =
@@ -121,8 +118,15 @@ const Navbar = (props) => {
             <button
               className="btn btn-outline-success rounded-circle"
               type="submit"
+              style={{ color: props.sIconColor }}
             >
-              <img src={require("../../imgs/search.png")} alt="search" />
+              <img
+                src={require(props.sIconColor === "Home"
+                  ? "../../imgs/SearchIcon1.png"
+                  : "../../imgs/SearchIcon.png")}
+                alt="search"
+                style={{ width: 32 }}
+              />
             </button>
           </form>
           <button
@@ -146,8 +150,14 @@ const Navbar = (props) => {
             </div>
             <div style={{ height: 45 }}>
               <Link
-                to="Library"
-                className={`text-decoration-none text-black me-4 me-lg-5`}
+                to="/Home/Library"
+                className={`text-decoration-none me-4 me-lg-5`}
+                style={
+                  location.pathname.split("/").find((x) => x === "Library") !==
+                  undefined
+                    ? { color: "rgb(146, 227, 169)" }
+                    : { color: "black" }
+                }
               >
                 المكتبة
               </Link>

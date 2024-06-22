@@ -6,14 +6,17 @@ const WritePost = (props) => {
 
   const handleNewPost = async () => {
     result.content = document.getElementById("newPost").value;
-    await fetch("https://backend-9s26.onrender.com/social-media/posts/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `${jwt}`,
-      },
-      body: JSON.stringify(result),
-    });
+    await fetch(
+      "https://backend-9s26.onrender.com/social-media/posts/create/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${jwt}`,
+        },
+        body: JSON.stringify(result),
+      }
+    );
     console.log();
     document.getElementById("newPost").value = "";
   };

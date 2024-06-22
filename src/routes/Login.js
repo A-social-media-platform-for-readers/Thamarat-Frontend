@@ -65,6 +65,10 @@ const Login = () => {
       localStorage.setItem("token", content.jwt);
       navigate("/Home");
       setLoading("none");
+      if (!response.ok) {
+        alert("You are not authenticated");
+        navigate("/thamarat-frontend");
+      }
     } else {
       alert("Enter data correctly");
     }

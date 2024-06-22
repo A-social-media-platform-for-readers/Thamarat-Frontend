@@ -40,7 +40,7 @@ const SocialMedia = () => {
         className="container-md pt-5 d-flex justify-content-between position-relative"
         style={{ height: "100vh" }}
       >
-        <Navbar userName={userName} />
+        <Navbar userName={userName} sIconColor={"#699CFF"} />
         <Sidebar />
         <div className={`${styles.socialMediaContent} row`}>
           <PostsContainer name={userName} />

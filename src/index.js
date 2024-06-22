@@ -13,6 +13,7 @@ import Home from "./routes/Home";
 import BookPage from "./routes/BookPage";
 import SocialMedia from "./routes/SocialMedia";
 import BookStore from "./Components/BookStore/BookStore";
+import Library from "./routes/Library";
 
 const routes = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const routes = createBrowserRouter([
       {
         path: "/Home/BookPage/:id/",
         element: <BookPage />,
+      },
+      {
+        path: "/Home/Library",
+        element: <Library />,
       },
     ],
   },
