@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.css": "/thamarat-frontend/static/css/main.48747f61.css",
-    "main.js": "/thamarat-frontend/static/js/main.10dd4ba8.js",
+    "main.css": "/thamarat-frontend/static/css/main.e0f56cfa.css",
+    "main.js": "/thamarat-frontend/static/js/main.f07843a3.js",
     "static/js/453.651d0201.chunk.js": "/thamarat-frontend/static/js/453.651d0201.chunk.js",
-    "static/media/postImg.png": "/thamarat-frontend/static/media/postImg.2ce88b6fc5a1e2a9f9ea.png",
     "static/media/notification.jpg": "/thamarat-frontend/static/media/notification.caa77123794c15ba1cdd.jpg",
     "static/media/profileImg.jpg": "/thamarat-frontend/static/media/profileImg.749667cc5449de2b9786.jpg",
     "static/media/ReadingIll.png": "/thamarat-frontend/static/media/ReadingIll.0e5c1a07d52ddf52d81d.png",
@@ -11,12 +10,12 @@
     "static/media/book1.png": "/thamarat-frontend/static/media/book1.b6d35fa1d1e49155f1fd.png",
     "static/media/signupImg.png": "/thamarat-frontend/static/media/signupImg.aef92cf3c985e3ff55e0.png",
     "index.html": "/thamarat-frontend/index.html",
-    "main.48747f61.css.map": "/thamarat-frontend/static/css/main.48747f61.css.map",
-    "main.10dd4ba8.js.map": "/thamarat-frontend/static/js/main.10dd4ba8.js.map",
+    "main.e0f56cfa.css.map": "/thamarat-frontend/static/css/main.e0f56cfa.css.map",
+    "main.f07843a3.js.map": "/thamarat-frontend/static/js/main.f07843a3.js.map",
     "453.651d0201.chunk.js.map": "/thamarat-frontend/static/js/453.651d0201.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.48747f61.css",
-    "static/js/main.10dd4ba8.js"
+    "static/css/main.e0f56cfa.css",
+    "static/js/main.f07843a3.js"
   ]
 }
