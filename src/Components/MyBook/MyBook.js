@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 const MyBook = (props) => {
   return (
     <Link
-      to={`/BookPage/${props.bookId}/`}
+      to={`MyBookPage/${props.bookId}/${props.list}`}
       className="col text-center"
       style={{ cursor: "pointer" }}
+      list-type={props.list}
     >
       <img
         src={require("../../imgs/book1.png")}

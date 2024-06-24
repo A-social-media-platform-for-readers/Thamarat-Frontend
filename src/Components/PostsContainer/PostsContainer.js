@@ -52,9 +52,9 @@ const PostsContainer = (props) => {
         {loading ? (
           <Loading />
         ) : (
-          posts.map((post) => (
+          posts.map((post, i) => (
             <PostContainer
-              key={post.id}
+              key={i}
               id={post.id}
               name={props.name}
               content={post.content}
@@ -62,6 +62,7 @@ const PostsContainer = (props) => {
               like_count={post.like_count}
               image={post.image}
               liked={post.you_liked}
+              user={post.user}
             />
           ))
         )}

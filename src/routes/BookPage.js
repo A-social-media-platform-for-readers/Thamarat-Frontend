@@ -85,6 +85,21 @@ const BookPage = (props) => {
     setCommentsCount(commentsCount + 1);
   };
 
+  const handlePurchase = async () => {
+    let response = await fetch(
+      `https://backend-9s26.onrender.com/books/to-read/${id}/`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${jwt}`,
+        },
+      }
+    );
+    let content = await response.json();
+    console.log(content);
+  };
+
   return (
     <div
       className={`d-flex flex-column position-relative ${styles.bookPageContainer}`}
@@ -176,8 +191,7 @@ const BookPage = (props) => {
             <AttributeBox attribute="عربي" />
             <AttributeBox attribute="عربي" />
           </div>
-          <SecondaryBtn text="إضافة الي السلة" />
-          <PrimaryBtn text="اشتتري الان" />
+          <PrimaryBtn text="اشتتري الان" onFunction={handlePurchase} />
         </div>
       </div>
       <div className={`row `}>

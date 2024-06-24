@@ -82,8 +82,8 @@ const Sidebar = () => {
           </span>
           <ul className={`mt-3`}>
             <li>
-              <Link to="" className="text-decoration-none text-black">
-                أخبار
+              <Link to="/AddBook" className="text-decoration-none text-black">
+                إضافة كتاب
               </Link>
             </li>
             <li>
@@ -107,11 +107,6 @@ const Sidebar = () => {
               </Link>
             </li>
           </ul>
-        </div>
-        <div className={`${styles.allCatigories} w-100 mt-4`}>
-          <span className={`text-secondary ${styles.sectionTitle}`}>
-            جميع الأنواع
-          </span>
         </div>
       </div>
     </div>

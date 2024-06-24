@@ -9,7 +9,7 @@ const Comment = (props) => {
       />
       <div className={`${styles.content}`}>
         <span>1hr</span>
-        <span className="fw-bold">Ayman Ehab</span>
+        <span className="fw-bold">{props.user.name}</span>
         <div className="mt-2">{props.commentContent}</div>
       </div>
       <div className={`position-absolute ${styles.commentInteract}`}>

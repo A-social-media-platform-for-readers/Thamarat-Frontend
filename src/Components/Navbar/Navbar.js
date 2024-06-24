@@ -155,7 +155,7 @@ const Navbar = (props) => {
                 style={
                   location.pathname.split("/").find((x) => x === "Library") !==
                   undefined
-                    ? { color: "rgb(146, 227, 169)" }
+                    ? { color: "#6B74A3", fontWeight: "bold" }
                     : { color: "black" }
                 }
               >

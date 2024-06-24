@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./routes/Root";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 
 // Components
+import Root from "./routes/Root";
 import ForgotPassword from "./routes/ForgotPassword";
 import Login from "./routes/Login";
 import SignUp1 from "./routes/SignUp1";
@@ -14,6 +14,9 @@ import BookPage from "./routes/BookPage";
 import SocialMedia from "./routes/SocialMedia";
 import BookStore from "./Components/BookStore/BookStore";
 import Library from "./routes/Library";
+import MyBookPage from "./routes/MyBookPage";
+import AddBook from "./routes/AddBook";
+import BookTAL from "./routes/BookTAL";
 
 const routes = createBrowserRouter([
   {
@@ -50,11 +53,31 @@ const routes = createBrowserRouter([
         path: "/Home/Library",
         element: <Library />,
       },
+      {
+        path: `/Home/Library/MyBookPage/:id/reading`,
+        element: <MyBookPage />,
+      },
+      {
+        path: `/Home/Library/MyBookPage/:id/readed`,
+        element: <MyBookPage />,
+      },
+      {
+        path: `/Home/Library/MyBookPage/:id/toRead`,
+        element: <MyBookPage />,
+      },
+      {
+        path: "/Home/Library/MyBookPage/:id/BookTAL",
+        element: <BookTAL />,
+      },
     ],
   },
   {
     path: "/SocialMedia",
     element: <SocialMedia />,
+  },
+  {
+    path: "/AddBook",
+    element: <AddBook />,
   },
 ]);
 

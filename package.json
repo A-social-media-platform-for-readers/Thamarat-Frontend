@@ -4,11 +4,13 @@
   "homepage": "https://a-social-media-platform-for-readers.github.io/thamarat-frontend/",
   "private": true,
   "dependencies": {
+    "@react-pdf-viewer/core": "^3.12.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.8",
     "gh-pages": "^6.1.1",
+    "pdfjs-dist": "^3.4.120",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.0",

@@ -94,6 +94,7 @@ const PostContainer = (props) => {
                 key={id}
                 commentContent={comment.content}
                 likesCount={comment.like_count}
+                user={comment.user}
               />
             ))
           )}
@@ -111,8 +112,8 @@ const PostContainer = (props) => {
             className={`${styles.userInfo} d-flex align-items-center text-start `}
           >
             <div className="ms-3">
-              <div className="">{props.name}</div>
-              <div className="text-secondary">Auther and Reader</div>
+              <div className="">{props.user.name}</div>
+              <div className="text-secondary">{props.user.identity}</div>
             </div>
             <img
               src={require("../../imgs/aymon.png")}
@@ -161,8 +162,8 @@ const PostContainer = (props) => {
               />
             </div>
             <div className="d-flex align-items-center me-4">
-              <div>Like</div>
-              <span className="me-2 ms-2">{likesCount}</span>
+              <div className="text-black">Like</div>
+              <span className="me-2 ms-2 text-black">{likesCount}</span>
               <svg
                 width="15"
                 height="14"
@@ -173,7 +174,7 @@ const PostContainer = (props) => {
               >
                 <path
                   d="M7.08447 13.5L6.05722 12.5649C2.40872 9.2564 0 7.07439 0 4.39646C0 2.21444 1.71444 0.5 3.89646 0.5C5.12916 0.5 6.31226 1.07384 7.08447 1.98065C7.85668 1.07384 9.03978 0.5 10.2725 0.5C12.4545 0.5 14.1689 2.21444 14.1689 4.39646C14.1689 7.07439 11.7602 9.2564 8.11172 12.5719L7.08447 13.5Z"
-                  fill={liked ? "#EA4335" : "#000000"}
+                  fill={liked ? "#EA4335" : "#9f9f9f"}
                 />
               </svg>
             </div>
