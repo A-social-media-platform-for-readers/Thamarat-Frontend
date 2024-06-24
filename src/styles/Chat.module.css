@@ -1,0 +1,26 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #e6eefa;
+}
+.messeges {
+  height: calc(100% - 70px);
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+.inputMsg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  gap: 50px;
+}
+.inputMsg input {
+  width: 50%;
+}
+.inputMsg button {
+}

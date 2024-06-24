@@ -1,0 +1,25 @@
+.form {
+  gap: 20px;
+  text-align: center;
+  margin: 0 !important;
+  padding: 20px 0;
+}
+
+.form input {
+  width: 50%;
+  border: 2px solid #92e3a9;
+  border-radius: 10px;
+  padding: 10px;
+  direction: ltr;
+}
+.form input[type="file"] {
+  background-color: white;
+}
+
+.form input[type="submit"] {
+  background-color: #92e3a9;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}

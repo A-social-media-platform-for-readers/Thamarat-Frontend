@@ -17,6 +17,7 @@ import Library from "./routes/Library";
 import MyBookPage from "./routes/MyBookPage";
 import AddBook from "./routes/AddBook";
 import BookTAL from "./routes/BookTAL";
+import Chat from "./routes/Chat";
 
 const routes = createBrowserRouter([
   {
@@ -66,7 +67,15 @@ const routes = createBrowserRouter([
         element: <MyBookPage />,
       },
       {
-        path: "/Home/Library/MyBookPage/:id/BookTAL",
+        path: "/Home/Library/MyBookPage/:id/reading/BookTAL",
+        element: <BookTAL />,
+      },
+      {
+        path: "/Home/Library/MyBookPage/:id/readed/BookTAL",
+        element: <BookTAL />,
+      },
+      {
+        path: "/Home/Library/MyBookPage/:id/toRead/BookTAL",
         element: <BookTAL />,
       },
     ],
@@ -78,6 +87,10 @@ const routes = createBrowserRouter([
   {
     path: "/AddBook",
     element: <AddBook />,
+  },
+  {
+    path: "/Chat",
+    element: <Chat />,
   },
 ]);
 

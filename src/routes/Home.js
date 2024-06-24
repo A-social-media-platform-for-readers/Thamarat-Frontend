@@ -36,7 +36,7 @@ const Home = () => {
       style={{ height: "100vh" }}
     >
       <Navbar userName={userName.name} sIconColor={"Home"} />
-      <Sidebar />
+      <Sidebar identity={userName.identity} />
       <Outlet />
     </div>
   );

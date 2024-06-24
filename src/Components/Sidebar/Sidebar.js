@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./SideBar.module.css";
 import { Link, useLocation } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   const [activeSection, setActiveSection] = useState(0);
   const location = useLocation();
   useEffect(() => {
@@ -82,8 +82,8 @@ const Sidebar = () => {
           </span>
           <ul className={`mt-3`}>
             <li>
-              <Link to="/AddBook" className="text-decoration-none text-black">
-                إضافة كتاب
+              <Link to="" className="text-decoration-none text-black">
+                غموض
               </Link>
             </li>
             <li>
@@ -107,6 +107,24 @@ const Sidebar = () => {
               </Link>
             </li>
           </ul>
+        </div>
+        <div
+          style={{
+            backgroundColor: "#92e3a9",
+            margin: "0 0 0 auto",
+            padding: 10,
+            borderRadius: 20,
+          }}
+        >
+          {props.identity === "PUBLISHER" || props.identity === "AUTHOR" ? (
+            <Link
+              to="/AddBook"
+              className="text-decoration-none"
+              style={{ color: "white" }}
+            >
+              إضافة كتاب
+            </Link>
+          ) : null}
         </div>
       </div>
     </div>

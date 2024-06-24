@@ -141,11 +141,8 @@ const Navbar = (props) => {
             className={`links d-flex justify-content-between align-items-center`}
           >
             <div style={{ height: 45 }}>
-              <Link
-                to="ShopingCart"
-                className={`text-decoration-none text-black`}
-              >
-                عربة التسوق
+              <Link to="/Chat" className={`text-decoration-none text-black`}>
+                المحادثات
               </Link>
             </div>
             <div style={{ height: 45 }}>

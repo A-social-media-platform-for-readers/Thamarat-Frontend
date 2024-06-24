@@ -1,6 +1,7 @@
 import styles from "../styles/MyBookPage.module.css";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+// import * as pdfjsLib from "pdfjs-dist/webpack";
 
 const BookTAL = () => {
   const jwt = localStorage.getItem("token");
@@ -115,10 +116,53 @@ const BookTAL = () => {
     }
   };
 
+  // const [ocr, setOcr] = useState("");
+
+  // const extractTextFromPdf = async (file) => {
+  //   const arrayBuffer = await file.arrayBuffer();
+  //   const pdf = await pdfjsLib.getDocument(arrayBuffer).promise;
+  //   let fullText = "";
+
+  //   for (let i = 0; i < pdf.numPages; i++) {
+  //     const page = await pdf.getPage(i + 1);
+  //     const textContent = await page.getTextContent();
+  //     const pageText = textContent.items.map((item) => item.str).join(" ");
+  //     fullText += pageText + "\n";
+  //   }
+
+  //   setOcr(fullText);
+  //   console.log(fullText);
+  // };
+
+  // const handleFileChange = (e) => {
+  //   const file = e.target.files[0];
+  //   if (file) {
+  //     extractTextFromPdf(file);
+  //   }
+  // };
+
+  const [language, setLanguage] = useState("eng");
+  const handleTranslateText = async () => {
+    const fromNum = document.getElementById("from").value;
+    const toNum = document.getElementById("to").value;
+    console.log(fromNum, toNum, language);
+    let response = await fetch(
+      `https://backend-9s26.onrender.com/AI/OCR/${id}/${fromNum}/${toNum}/${language}/`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${jwt}`,
+        },
+      }
+    );
+    let content = await response.json();
+    console.log(content);
+  };
   return (
     <div className={`${styles.container}`}>
       <div className={`container ${styles.bookSec1} m-auto`}>
-        <div className="row p-2 d-flex justify-content-center">
+        <div className="row p-2 d-flex justify-content-center align-items-center">
           <img
             src={require("../imgs/translateWhite.png")}
             alt="translate"
@@ -130,19 +174,54 @@ const BookTAL = () => {
               margin: "0 10px",
               padding: "5px",
             }}
+            onClick={handleTranslateText}
           />
-          <img
-            src={require("../imgs/listenWhite.png")}
-            alt="listen"
-            style={{
-              width: "40px",
-              cursor: "pointer",
-              backgroundColor: "#6B74A3",
-              borderRadius: "10px",
-              margin: "0 10px",
-              padding: "5px",
-            }}
-          />
+          <div>
+            <select
+              name="اللغة"
+              value={language}
+              style={{ width: "100%", marginBottom: "10px" }}
+              onChange={(e) => setLanguage(e.target.value)}
+            >
+              <option value="eng">الإنجليزية</option>
+              <option value="ara">العربية</option>
+            </select>
+            <div
+              style={{ width: "fit-content" }}
+              className="d-flex justify-content-around align-items-center w-100"
+            >
+              <label
+                for="from"
+                style={{
+                  width: 80,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  margin: "0 0 0 10px",
+                }}
+              >
+                من
+                <input
+                  type="number"
+                  id="from"
+                  name="from"
+                  className="w-100 me-2"
+                />
+              </label>
+              <label
+                for="to"
+                style={{
+                  width: 80,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                إلى
+                <input type="number" id="to" name="to" className="w-100 me-2" />
+              </label>
+            </div>
+          </div>
         </div>
         <div className="row p-2 d-flex justify-content-center">
           <img
@@ -182,6 +261,14 @@ const BookTAL = () => {
       </div>
       <div className={`${styles.bookSec2}`}>
         <p>{translated}</p>
+        {/* <div>
+          <input
+            type="file"
+            onChange={handleFileChange}
+            accept="application/pdf"
+          />
+          <textarea>{ocr}</textarea>
+        </div> */}
       </div>
     </div>
   );

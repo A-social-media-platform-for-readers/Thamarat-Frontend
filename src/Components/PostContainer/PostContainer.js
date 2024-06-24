@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import Comment from "../Comment/Comment";
 import ToggleBtn from "../ToggleBtn/ToggleBtn";
 import styles from "./PostContainer.module.css";
@@ -92,9 +93,11 @@ const PostContainer = (props) => {
             comments.map((comment, id) => (
               <Comment
                 key={id}
+                id={comment.id}
                 commentContent={comment.content}
                 likesCount={comment.like_count}
                 user={comment.user}
+                liked={comment.you_liked}
               />
             ))
           )}

@@ -1,0 +1,19 @@
+.container {
+  text-align: end;
+  background-color: #5790df;
+  color: white;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 20px auto 20px 20px;
+}
+/* .container div:first-child {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+} */
+.messege {
+}

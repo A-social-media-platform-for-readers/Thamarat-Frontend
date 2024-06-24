@@ -8,7 +8,6 @@ import BookDetails from "../Components/BookDetails/BookDetails";
 import BookLinks from "../Components/BookLinks/BookLinks";
 import BookSection from "../Components/BookSection/BookSection";
 import PrimaryBtn from "../Components/PrimaryBtn/PrimaryBtn";
-import SecondaryBtn from "../Components/SecondaryBtn/SecondaryBtn";
 import Comment from "../Components/Comment/Comment";
 import Seperator from "../Components/Seperator/Seperator";
 import styles from "../styles/BookPage.module.css";
