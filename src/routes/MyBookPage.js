@@ -38,6 +38,22 @@ const MyBookPage = () => {
   const [pdfPath, setPdfPath] = useState("");
 
   const handleFullScreen = async () => {
+    const pdfResponse = await fetch(
+      `https://backend-9s26.onrender.com/books/${id}/download/`,
+      {
+        headers: {
+          Authorization: `${jwt}`,
+        },
+        credentials: "include",
+      }
+    );
+
+    if (!pdfResponse.ok) {
+      throw new Error("Failed to download PDF");
+    }
+    const pdfBlob = await pdfResponse.blob();
+    const url = window.URL.createObjectURL(pdfBlob);
+    setPdfPath(url);
     let response = await fetch(
       `https://backend-9s26.onrender.com/books/reading/${id}/`,
       {
@@ -62,22 +78,6 @@ const MyBookPage = () => {
     );
     let deleteContent = await deleteResponse.json();
     console.log(deleteContent);
-    const pdfResponse = await fetch(
-      `https://backend-9s26.onrender.com/books/${id}/download/`,
-      {
-        headers: {
-          Authorization: `${jwt}`,
-        },
-        credentials: "include",
-      }
-    );
-
-    if (!pdfResponse.ok) {
-      throw new Error("Failed to download PDF");
-    }
-    const pdfBlob = await pdfResponse.blob();
-    const url = window.URL.createObjectURL(pdfBlob);
-    setPdfPath(url);
     if (!dsiplayPDF) {
       setDsiplayPDF(true);
     }

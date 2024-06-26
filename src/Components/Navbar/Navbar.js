@@ -77,7 +77,7 @@ const Navbar = (props) => {
 
   const searchResults = results.map((result) => {
     return (
-      <tr>
+      <tr onClick={() => navigate(`/Home/BookPage/${result.id}/`)}>
         <th scope="row">{result.id}</th>
         <td>{result.title}</td>
         <td>{result.author}</td>

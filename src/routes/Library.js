@@ -86,10 +86,10 @@ const Library = () => {
       <h5 className="text-center mt-4 mb-4">كتب سأقرأها</h5>
       <Seperator width="w-100 mt-3 mb-3" />
       <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
-        {toReadBooks.map((toReadBook) => {
+        {toReadBooks.map((toReadBook, i) => {
           return (
             <MyBook
-              key={toReadBook.id}
+              key={i}
               bookId={toReadBook.id}
               bookName={toReadBook.title}
               author={toReadBook.author}
@@ -102,10 +102,10 @@ const Library = () => {
       <h5 className="text-center mt-4 mb-4">كتب أقرأها</h5>
       <Seperator width="w-100 mt-3 mb-3" />
       <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
-        {readingBooks.map((readingBook) => {
+        {readingBooks.map((readingBook, i) => {
           return (
             <MyBook
-              key={readingBook.id}
+              key={i}
               bookId={readingBook.id}
               bookName={readingBook.title}
               author={readingBook.author}
@@ -118,10 +118,10 @@ const Library = () => {
       <h5 className="text-center mt-4 mb-4">كتب قرأتها</h5>
       <Seperator width="w-100 mt-3 mb-3" />
       <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
-        {readedBooks.map((readedBook) => {
+        {readedBooks.map((readedBook, i) => {
           return (
             <MyBook
-              key={readedBook.id}
+              key={i}
               bookId={readedBook.id}
               bookName={readedBook.title}
               author={readedBook.author}

@@ -86,7 +86,7 @@ const FeedSection = () => {
       const content = await response.json();
       setPopularContent(content.results);
     })();
-  }, []);
+  }, [jwt]);
 
   const [books, setBooks] = useState([
     {
@@ -172,7 +172,7 @@ const FeedSection = () => {
       const content = await response.json();
       setBooks(content.results);
     })();
-  }, []);
+  }, [jwt]);
 
   const [mostRatedContent, setMostRatedContent] = useState([
     {
@@ -253,7 +253,88 @@ const FeedSection = () => {
       const content = await response.json();
       setMostRatedContent(content.results);
     })();
-  }, []);
+  }, [jwt]);
+
+  const [religiousContent, setReligiousContent] = useState([
+    {
+      id: 0,
+      title: "string1",
+      author: "string1",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-05-07",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+    {
+      id: 0,
+      title: "string",
+      author: "string",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-05-07",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+    {
+      id: 0,
+      title: "string",
+      author: "string",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-05-07",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+    {
+      id: 0,
+      title: "string",
+      author: "string",
+      rate: 5,
+      price: 10000,
+      genre: "string",
+      publisher: "string",
+      publication_date: "2024-05-07",
+      description: "string",
+      readers_count: 2147483647,
+      to_read_count: 2147483647,
+      cover_image: "string",
+      pdf_file: "string",
+    },
+  ]);
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(
+        `https://backend-9s26.onrender.com/books/filter-genre/دين/`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${jwt}`,
+          },
+          credentials: "include", // Include cookies with the request
+        }
+      );
+
+      const content = await response.json();
+      setReligiousContent(content.results);
+    })();
+  }, [jwt]);
 
   return (
     <div className={`${styles.feedSection} position-relative`}>
@@ -263,6 +344,7 @@ const FeedSection = () => {
         content={books}
       />
       <BookSection sectionName="الأعلى تقييماً" content={mostRatedContent} />
+      <BookSection sectionName="دين" content={religiousContent} />
     </div>
   );
 };
