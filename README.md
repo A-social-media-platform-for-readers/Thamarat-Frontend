@@ -1,3 +1,28 @@
+# Project Title
+Thamarat
+
+## Description
+A social media platform for readers with a bookstore.
+
+## Features
+- Responsive (not with mobile as there is an application that is currantly working on).
+- Interactive
+- State Managment
+- API Integration
+- Single Page Application
+
+## Installation
+You to install npm, react invironment, react router, and react pdf reader
+
+# Navigate to the project directory
+cd your-repo-name
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
